@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+ifstream f("doarvocale.in");
+ofstream g("doarvocale.out");
+char m[256],c;
+bool voc=true;
+int a,l,t;
+int main()
+{
+    f>>a;
+    f.get();
+    for(int i=0; i<a; i++)
+    {
+        voc=true;
+        f.getline(m,256);
+        l=strlen(m);
+        for(int j=0; j<l; j++)
+        {
+            if(!(m[j] == 'a' || m[j] == 'e' || m[j] == 'i' || m[j] == 'o'|| m[j] == 'u'))
+                voc=false;
+        }
+        if(voc)
+        {
+            t++;
+        }
+    }
+    g<<t;
+}
