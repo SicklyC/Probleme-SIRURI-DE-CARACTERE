@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+char t,n[21],p[21];
+int b,i,z;
+int main()
+{
+    while(cin.get(t)&&t!=' ')
+    {
+        n[z++] = t;
+    }
+    n[z] = '\0';
+    cin.get(p,25);
+    b=strlen(p);
+    for(int i=0; i<b; i++)
+    {
+        if(p[i] == 'a' || p[i] == 'e' || p[i] == 'i' || p[i] == 'o'|| p[i] == 'u'|| p[i] == 'A'|| p[i] == 'E'|| p[i] == 'I'|| p[i] == 'O'|| p[i] == 'U')
+        {
+            for(int j=i; j<b; j++)
+            {
+                p[j]=p[j+1];
+            }
+            i--;
+            b--;
+        }
+    }
+    cout<<p<<" "<<n;
+}
