@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+ifstream f("paritatesiruri.in");
+ofstream g("paritatesiruri.out");
+char m[256];
+int a,l;
+int main()
+{
+    f>>a;
+    f.get();
+    for(int i=0; i<a; i++)
+    {
+
+        f.getline(m,256);
+        l=strlen(m);
+        for(int j=1; j<l; j+=2)
+        {
+            g<<m[j];
+        }
+        g<<" ";
+        for(int j=0; j<l; j+=2)
+        {
+            g<<m[j];
+        }
+        g<<"\n";
+    }
+return 0;
+}
