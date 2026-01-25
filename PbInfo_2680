@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+int n,l;
+bool ok;
+char vers[256],c;
+int main()
+{
+    cin>>n;
+    cin.ignore();
+    for(int i=0; i<n; i++)
+    {
+        ok=false;
+        cin.getline(vers,256);
+        l=strlen(vers);
+        for(int j=l-1; j>=0; j--)
+        {
+            c=vers[j];
+            if((vers[j] == '.' || vers[j] == ',' || vers[j] == '!' || vers[j] == '?')&&(!ok))
+            {
+                ok=true;
+                j--;
+            }
+            if(ok&&(vers[j] == '.' || vers[j] == ',' || vers[j] == '!' || vers[j] == '?'))
+            {
+                for(int d=j; d<l; d++)
+                    vers[d]=vers[d+1];
+                l--;
+            }
+        }
+    cout << vers << endl;
+    }
+
+}
