@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+ifstream f("capslock.in");
+ofstream g("capslock.out");
+char m[256],c;
+bool caps=false;
+int a;
+int main()
+{
+    f.getline(m,256);
+    a=strlen(m);
+    for(int i=0; i<a; i++)
+    {
+        if(!caps)
+        {
+            c=m[i];
+            if(c=='#')
+            {
+                caps=true;
+            }
+            else
+            {
+                g<<m[i];
+            }
+        }
+        else
+        {
+            c=m[i];
+            if(c=='#')
+            {
+                caps=false;
+            }else{
+            c=toupper(m[i]);
+            g<<c;
+
+            }
+
+    }
+}
+}
